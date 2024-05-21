@@ -6,7 +6,7 @@ const nextConfig = {
     images: {
       unoptimized: true,
     },
-    basePath: "",
+    basePath: "/retirovtsd-b",
 };
 
 export default nextConfig;

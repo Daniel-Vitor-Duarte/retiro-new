@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .bg-image-top {
-    background-image: url("/images/brain-jar.png");
+    background-image: url("/retirovtsd-b/images/brain-jar.png");
     background-position: center right;
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,7 +11,7 @@
 }
 
 .bg-image-bottom {
-    background-image: url("/images/Leandro.png");
+    background-image: url("/retirovtsd-b/images/Leandro.png");
     background-position: center left;
     background-repeat: no-repeat;
     background-size: cover;

@@ -18,14 +18,14 @@ export default function FaqSection(){
 
             <section className="bg-image-bottom w-full py-[10rem] mm:pt-8 sm:pt-12 mm:px-8">
                 <div className="max-w-[75.9rem] sm:max-w-[21.4rem] flex flex-col items-end sm:items-center mx-auto sm:pb-[15rem]">
-                    <div className="flex items-center gap-6 sm:gap-4 max-w-[34.1rem]">
+                    <div className="flex items-center gap-6 sm:gap-4 max-w-[30.5625rem]">
                         <Image className="sm:hidden" src={Ban} alt=""/>
                         <Image className="sm:block hidden" src={BanM} alt=""/>
                         <p className="text-white text-[1.75rem] sm:text-[1.5rem] leading-[2.25rem] sm:leading-[2rem] font-medium">
                         Ir ao {" "} <strong>Retiro VTSD</strong> pode causar insônia por pelo menos {" "} <strong>3 dias seguidos</strong>
                         </p>
                     </div>
-                    <div className="max-w-[34.1rem] text-white mt-8 mm:mt-4">
+                    <div className="max-w-[30.5625rem] text-white mt-8 mm:mt-4">
                         <p className="text-[1.75rem] font-bold">
                         Programação do retiro
                         </p>
