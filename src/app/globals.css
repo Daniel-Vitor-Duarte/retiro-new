@@ -50,7 +50,7 @@
 
 @media (max-width: 725px) {
     .bg-image-top {
-        background-image: url("/images/brain-jar-mobile.png");
+        background-image: url("/retirovtsd-b/images/brain-jar-mobile.png");
         background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -58,7 +58,7 @@
     }
 
     .bg-image-bottom {
-        background-image: url("/images/Leandro-mobile.png");
+        background-image: url("/retirovtsd-b/images/Leandro-mobile.png");
         background-position: bottom right;
         background-repeat: no-repeat;
         background-size: cover;
