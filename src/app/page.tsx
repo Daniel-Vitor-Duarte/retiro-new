@@ -11,7 +11,7 @@ export default function Home() {
     <main >
       <DataLayer
         type_page="geral"
-        id_produto="2438760"
+        id_produto="2875687"
         operacao="ppt"
         type_content="ppt"
         versao_pico="ppt"
