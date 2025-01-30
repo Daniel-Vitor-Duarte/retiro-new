@@ -1,21 +1,12 @@
 "use client";
 import { useState } from 'react';
-
-
-import {
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon
-} from "@chakra-ui/react";
-
+import { ChevronDown } from 'lucide-react';
 
 const SectionFaq: React.FC = () => {
   const faqs = [
     {
       title: "O Retiro serve para quem não tem produto?",
-      text: () => (
+      text: (
         <div>
           <p>Todo o processo de criação é feito com a ajuda do aplicativo de implementação do VTSD: o Appbumper. Você vai criar o produto, os anúncios, as páginas e todo o seu processo de marketing em um só lugar. É impossível ficar perdido e sem entender qual é o próximo passo.</p>
           <p>É praticamente preencher os formulários.</p>
@@ -25,7 +16,7 @@ const SectionFaq: React.FC = () => {
     {
       title:
         "Quando e onde o Retiro vai acontecer?",
-      text: () => (
+      text: (
         <div>
           O Stories 10x é o remédio para reengajar um perfil. Porque quando você
           faz o uso da técnica, você volta a aparecer para todo mundo que não
@@ -62,7 +53,7 @@ const SectionFaq: React.FC = () => {
     {
       title:
         "Quem dará as orientações durante o processo?",
-      text: () => (
+      text: (
         <div>
           Quando você entrar nos Stories 10x, você vai ver que nós temos uma
           estrutura em que você não precisa criar stories todos os dias.
@@ -104,7 +95,7 @@ const SectionFaq: React.FC = () => {
     },
     {
       title: "Devo ser aluno do VTSD para participar do Retiro?",
-      text: () => (
+      text: (
         <div>
           O fato de você ainda não ter produto é um dos principais motivos que
           faz o Stories 10x ser tão interessante para você. O porquê disso está
@@ -136,7 +127,7 @@ const SectionFaq: React.FC = () => {
     {
       title:
         "Qual o preço do Retiro?",
-      text: () => (
+      text: (
         <div>
           Um dos problemas de ser grande no seu nicho, é que você perde o
           elemento de proximidade com as pessoas. Afinal, quando você fica
@@ -171,7 +162,7 @@ const SectionFaq: React.FC = () => {
     {
       title:
         "Posso fazer o Retiro com meu sócio?",
-      text: () => (
+      text: (
         <div>
           Eu mesmo não gosto de expor meu dia a dia. 90% do meu conteúdo é
           conversa com a comunidade, eu só vou surfando junto com eles,
@@ -201,45 +192,46 @@ const SectionFaq: React.FC = () => {
     },
   ];
 
-  const [expandedIndex, setExpandedIndex] = useState<number | number[]>([]);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const handleToggle = (index: number) => {
-    setExpandedIndex((prevIndex) => (prevIndex === index ? [] : index));
+  const toggleAccordion = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
-    <>
-     <div className="w-full mt-12 sm:mt-6 text-[#FCFCFC]">
+    <div className="w-full lg:mt-12 mt-6 text-[#FCFCFC]">
       <div className="flex flex-col">
-        <Accordion index={expandedIndex} allowMultiple={false}>
-          {faqs.map((faq, index) => (
-            <AccordionItem key={index} >
-              <>
-                <h2>
-                  <AccordionButton
-                    className={`${expandedIndex === index ? "rounded-t-2xl " : "rounded-2xl"
-                      } w-full relative flex mt-2 sm:text-[.875rem] lg:font-semibold leading-[25px] text-left font-semibold py-4 px-[1.5rem] pl-[19px] bg-[#151E21] border border-[#354044]`}
-                    onClick={() => handleToggle(index)}
-                  >
-                    {faq.title}
-                    <AccordionIcon
-                      style={{ color: "#FCFCFC" }}
-                      className="absolute right-[15px] text-[1.5rem]"
-                    />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel className="flex justify-center pt-[20px] sm:text-[.875rem] text-left p-[20px] sm:px-4 bg-[#354044] rounded-b-lg">
-                  <span>{faq.text()}</span>
-                </AccordionPanel>
-              </>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        {faqs.map((faq, index) => (
+          <div
+            key={index}
+            onClick={() => toggleAccordion(index)}
+            className={`cursor-pointer rounded-2xl mt-2 bg-[#151E21] border border-[#354044] lg:text-[1rem] text-[.875rem]`}
+          >
+            <div className="flex justify-between items-center py-4 lg:px-[1.5rem] px-[1rem] text-left font-semibold">
+              <p>{faq.title}</p>
+              <span
+                className={`lg:block hidden transition-transform ${activeIndex === index ? "rotate-180" : ""
+                  }`}
+              >
+                <ChevronDown />
+              </span>
+              <span
+                className={`lg:hidden transition-transform ${activeIndex === index ? "rotate-180" : ""
+                  }`}
+              >
+                <ChevronDown size={18} />
+              </span>
+            </div>
+            {activeIndex === index && (
+              <div className="bg-[#354044] rounded-b-lg p-[20px]">
+                {faq.text}
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
-    </>
   );
-}
+};
 
-
-export default SectionFaq
+export default SectionFaq;

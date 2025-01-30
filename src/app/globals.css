@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .bg-image-top {
-    background-image: url("/retirovtsd-b/images/brain-jar.png");
+    background-image: url("/retirovtsd-b/retirovtsd-b/images/bg-top.webp");
     background-position: center right;
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,14 +11,14 @@
 }
 
 .bg-image-bottom {
-    background-image: url("/retirovtsd-b/images/Leandro.png");
+    background-image: url("/retirovtsd-b/retirovtsd-b/images/Leandro.png");
     background-position: center left;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
 }
 
-.bg-gradient-top{
+.bg-gradient-top {
     background: linear-gradient(180deg, rgba(21, 30, 33, 0.00) 0%, #151E21 100%);
 }
 
@@ -36,21 +36,34 @@
 }
 
 .bg-gradient-proibido {
-    border-radius: 2rem;
-    background: linear-gradient(40deg, #354044 19.82%, #75979B 34.96%, #ECF23D 50.2%, #75979B 65.18%, #354044 80.18%);
+    border-radius: 0.5rem;
+    border: 1px solid #354044;
+    background: linear-gradient(99deg, #151E21 -0.04%, #20292C 100.04%);
+    box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.32);
 }
 
 .bg-gradient-proibido-over {
     background: linear-gradient(99deg, #151E21 -0.04%, #20292C 100.04%);
 }
 
-.bg-gradient-faq {
-    background: linear-gradient(157deg, rgba(53, 64, 68, 0.00) 63.86%, #20292C 100.02%), linear-gradient(155deg, #20292C 0.02%, rgba(32, 41, 44, 0.50) 70.62%);
+@media (min-width: 725px) {
+
+    .bg-gradient-faq {
+        background: linear-gradient(157deg, rgba(53, 64, 68, 0.00) 63.86%, #20292C 100.02%), linear-gradient(155deg, #20292C 0.02%, rgba(32, 41, 44, 0.50) 70.62%);
+    }
+
+}
+
+.bg-container-bottom {
+    border-radius: 1rem;
+    border: 1px solid var(--Secundary-primary-default, #354044);
+    background: rgba(32, 41, 44, 0.50);
+    backdrop-filter: blur(7.5px);
 }
 
 @media (max-width: 725px) {
     .bg-image-top {
-        background-image: url("/retirovtsd-b/images/brain-jar-mobile.png");
+        background-image: url("/retirovtsd-b/retirovtsd-b/images/bg-top-mob.webp");
         background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -58,7 +71,7 @@
     }
 
     .bg-image-bottom {
-        background-image: url("/retirovtsd-b/images/Leandro-mobile.png");
+        background-image: url("/retirovtsd-b/retirovtsd-b/images/Leandro-mobile.png");
         background-position: bottom right;
         background-repeat: no-repeat;
         background-size: cover;
@@ -66,6 +79,19 @@
     }
 
     .bg-gradient-proibido {
-        background: linear-gradient(68deg, #354044 19.82%, #75979B 34.96%, #ECF23D 50.2%, #75979B 65.18%, #354044 80.18%);
+        border-radius: 0.5rem;
+        border: 1px solid #354044;
+        background: linear-gradient(99deg, #151E21 -0.04%, #20292C 100.04%);
+    }
+
+    .bg-gradient-leve {
+        background: none;
+    }
+
+    .bg-container-bottom {
+        border-radius: 1rem;
+        border: none;
+        background: none;
+        backdrop-filter: none;
     }
 }

@@ -4,7 +4,7 @@ import HeroSection from './components/sections/HeroSection';
 import Testimonial from "./components/sections/TestimonialSection";
 import Recomend from "./components/sections/RecommendationsSection";
 import FaqSection from "./components/sections/FaqSection";
-import DataLayer from "./components/DataLayer";
+import DataLayer from "@/app/components/DataLayer";
 
 export default function Home() {
   return (
@@ -16,10 +16,10 @@ export default function Home() {
         type_content="ppt"
         versao_pico="ppt"
       />
-       <HeroSection />
-       <Testimonial />
-       <Recomend />
-       <FaqSection />
+      <HeroSection />
+      <Testimonial />
+      <Recomend />
+      <FaqSection />
     </main>
   );
 }
